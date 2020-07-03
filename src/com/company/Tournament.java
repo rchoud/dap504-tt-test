@@ -105,14 +105,12 @@ public class Tournament {
                 }
 
             }
-
+//Loop through winners and attach names
         for(int i = 0; i < winners.size(); i++)
         {
             System.out.println("Winners:" + winners.get(i).firstName + " " +  winners.get(i).lastName);
         }
 
-        System.out.println("Winners:" + winners.get(1).lastName);
-        System.out.println();
 
     }
 

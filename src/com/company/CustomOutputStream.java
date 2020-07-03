@@ -1,25 +1,27 @@
 package com.company;
 
-
-import javax.swing.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
+import javax.swing.JTextArea;
+
+/**
+ * This class extends from OutputStream to redirect output to a JTextArea
+ * @author www.codejava.net
+ *
+ */
 public class CustomOutputStream extends OutputStream {
-    private JTextArea mainContents;
+    private JTextArea textArea;
 
     public CustomOutputStream(JTextArea textArea) {
-        this.mainContents = textArea;
+        this.textArea = textArea;
     }
 
     @Override
     public void write(int b) throws IOException {
         // redirects data to the text area
-        mainContents.append(String.valueOf((char)b));
+        textArea.append(String.valueOf((char)b));
         // scrolls the text area to the end of data
-        mainContents.setCaretPosition(mainContents.getDocument().getLength());
+        textArea.setCaretPosition(textArea.getDocument().getLength());
     }
 }
-
-
-

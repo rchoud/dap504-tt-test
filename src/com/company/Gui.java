@@ -3,9 +3,7 @@ package com.company;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.io.OutputStream;
 
 import static java.lang.Thread.sleep;
 
@@ -25,7 +23,7 @@ public class Gui extends JFrame {
     private JButton makeMatches;
 
     private JComboBox comboBox1;
-    private JTextArea mainTextArea;
+    private JTextArea textArea;
     private JButton showPlayers;
 
 
@@ -42,7 +40,7 @@ public class Gui extends JFrame {
         frame.setSize(800, 400);
 
         JTextArea textArea1 = new JTextArea(3, 16);
-        mainTextArea.setEditable(false);
+        this.textArea.setEditable(false);
 
 
 
@@ -88,7 +86,7 @@ public class Gui extends JFrame {
 
                    /* for (int i = 0; i < tournament.winnersList.size(); i++) {
 
-                        mainTextArea.append(tournament.winnersList.get(i).firstName + " " + tournament.winnersList.get(i).lastName + "\n");
+                        textArea.append(tournament.winnersList.get(i).firstName + " " + tournament.winnersList.get(i).lastName + "\n");
 
 
                     }*/
