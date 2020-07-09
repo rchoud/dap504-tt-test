@@ -12,7 +12,7 @@ public class Main {
         System.out.println("--------------------------------------------");
         System.out.println(" Welcome to the Table Tennis Java Simulator ");
         System.out.println("--------------------------------------------");
-
+        System.out.println("----All output is displayed in the GUI------");
 
 	// starting point of app, start Tournament class
         //Instantiated in Gui class

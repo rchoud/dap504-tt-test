@@ -1,22 +1,31 @@
 package com.company;
 
+import java.util.Random;
+
 public class Player {
 
-    public String firstName, lastName;
-    public int skill = 0;
+    private String firstName, lastName;
+    public int score = 0;
 //    todo - make private
 
-
-    public Player(String firstName, String lastName, int skill) {
+    public Player(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.skill = skill;
+        calculateScore();
+    }
+
+    //Generate a random number between 20-100 for score
+    public void calculateScore() {
+        Random ran = new Random();
+        //Generate arbitrary value to decide a winner
+        score = ran.nextInt(80) + 20;
+
 
     }
 
-    public void printName() {
-
-        System.out.println(firstName + " " + lastName);
+    public String printName() {
+        String name = this.firstName + " " + this.lastName;
+        return name;
     }
 
 
