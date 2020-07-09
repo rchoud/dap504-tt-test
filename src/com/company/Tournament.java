@@ -3,6 +3,7 @@ package com.company;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
+import java.awt.*;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,27 +14,38 @@ import static java.lang.Thread.sleep;
 
 public class Tournament {
 
+    /**
+     * Initialise variables to assign values to attributes
+     */
+
     static int numberOfRounds;
-    public int numberOfPlayers;
+    static int numberOfPlayers;
     static int currentRound = 1; //Start with first round and iterate up ++
-    //public String dateString;
+
+    /**
+     * Create a ListArray of <Player> Objects
+     */
     public List<Player> playersList = new ArrayList<Player>();
 
 
-
+    /**
+     * Tournament class constructor, to set initial attributes
+     */
     public Tournament(int numberOfPlayers) throws IOException {
 
-        this.numberOfPlayers = numberOfPlayers;
+        numberOfPlayers = numberOfPlayers;
 
         createPlayerListArray(numberOfPlayers);
 
-        this.numberOfRounds = calcNumbRounds(this.numberOfPlayers);
-        //System.out.println(numberOfRounds + " Rounds");
+        numberOfRounds = calcNumbRounds(numberOfPlayers);
 
-    } // end constructor
+    }
+
+    /**
+     * Method for creating List of Player objects with the names populated by JSON data
+     */
 
 
-    //Method for creating List of Player object with the names populated by JSON data
     public void createPlayerListArray(int numberOfPlayers) throws IOException {
         //Generate string from JSON data
         String jsonFile = "data/players.json";
@@ -54,12 +66,16 @@ public class Tournament {
         }
     }
 
-    //Calculate number of rounds method
+    /**
+     * calcNumbRounds() Method for Calculating number of rounds method
+     * Take the argument numberOfPlayers int and returns int by dividing the numberOfPlayers by 2
+     */
+
     public int calcNumbRounds(int numberOfPlayers) {
         return (int) (Math.log(numberOfPlayers) / Math.log(2));
     }
 
-    //PLaying with time function, calculate length of tournament in milliseconds
+    //Playing with time function, calculate length of tournament in milliseconds
     private final long delay = 60;
     private long start, end;
     private long timeTaken = 0;
@@ -67,8 +83,12 @@ public class Tournament {
     //Instantiation of Date class
     Date date = new Date(null);
 
+   // Gui gui = new Gui();
+
+
     public void lineDivider() {
         System.out.println("\n______________________________________________\n");
+
     }
 
     //Not the most efficient methods to add titles depending on whether a standard round or the final
@@ -83,7 +103,6 @@ public class Tournament {
         lineDivider();
         System.out.println("-*-*-*-*-*-*-*-   F I N A L  R O U N D   -*-*-*-*-*-*-*-\n");
     }
-
 
 
     public void playTournament(List<Player> players) {
@@ -116,6 +135,7 @@ public class Tournament {
 
             //Output for the winner
             if (i == numberOfRounds - 1) {
+
                 //get last remaining winner in the List output as Champion
                 String champion = winners.get(0).printName() + " is the champion !!";
                 String championUpper = champion.toUpperCase();
@@ -199,8 +219,6 @@ public class Tournament {
         }
     }*/
 
-
-    //Need to work out how to get this in the Gui
 
 
 }
