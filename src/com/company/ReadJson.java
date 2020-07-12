@@ -1,5 +1,8 @@
 package com.company;
+/**
+ * Unused ReadJson class, this was intended to move the JSon method out of the Tournament class
 
+ */
 public class ReadJson {
 
     public String getFirst_name() {

@@ -6,7 +6,7 @@ import java.io.OutputStream;
 import javax.swing.JTextArea;
 
 /**
- * This class extends from OutputStream to redirect output to a JTextArea
+ * This class extends from OutputStream to redirect console output to a JTextArea (Gui.centreTextArea)
  * @author www.codejava.net
  *
  */
@@ -19,9 +19,7 @@ public class CustomOutputStream extends OutputStream {
 
     @Override
     public void write(int b) throws IOException {
-        // redirects data to the text area
+        // redirects console data to the textArea in Gui
         textArea.append(String.valueOf((char)b));
-        // scrolls the text area to the end of data
-        //textArea.setCaretPosition(textArea.getDocument().getLength());
     }
 }

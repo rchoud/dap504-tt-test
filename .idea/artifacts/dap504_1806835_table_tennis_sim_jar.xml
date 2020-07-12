@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="dap504-1806835-table-tennis-sim:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/dap504_1806835_table_tennis_sim_jar</output-path>
+    <root id="archive" name="dap504-1806835-table-tennis-sim.jar">
+      <element id="module-output" name="dap504-1806835-table-tennis-sim" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/gson-2.8.5.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

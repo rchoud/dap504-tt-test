@@ -5,6 +5,12 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Date class is used to create a date stamp in the format of dd/MM/yyyy (10/07/2020)
+ * Date object is instantiated in Gui to display when the Tournament took place
+ */
+
+
 //Date object, just trying out a simple Class and how to instantiate
 public class Date {
 
@@ -18,4 +24,11 @@ public class Date {
 
     }
 
+    public void timeFunction() {
+
+        final long delay = 60;
+        long start, end;
+        long timeTaken = 0;
+
+    }
 }
